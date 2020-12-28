@@ -1,0 +1,24 @@
+{
+  "name": "mysql-crud",
+  "version": "1.0.0",
+  "description": "Just some CRUD operations on MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thisiskartikgupta/DB001-MySQL-JS.git"
+  },
+  "keywords": [
+    "crud",
+    "mysql",
+    "js"
+  ],
+  "author": "Kartik Gupta (@thisiskartkgupta)",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/thisiskartikgupta/DB001-MySQL-JS/issues"
+  },
+  "homepage": "https://github.com/thisiskartikgupta/DB001-MySQL-JS#readme"
+}
