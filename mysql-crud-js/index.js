@@ -1,9 +1,6 @@
 var mysql = require("mysql");
 var express = require("express");
-var bodyParser = require("body-parser");
 var app = express();
-
-//app.use(bodyParser.json())
 
 var connection = mysql.createConnection({
   host     : 'localhost',									
@@ -22,16 +19,24 @@ connection.connect( (err) => {
   }
 });
 
-// app.get("/", (req,res) => {
-//   connection.query("SELECT * FROM db_node_crud_test", (err, rows, fields) => {
+//Create
+var createTableQuery = `CREATE TABLE crudtest (id int(15) NOT NULL AUTO_INCREMENT,name varchar(30) DEFAULT NULL,age float(15) DEFAULT NULL,PRIMARY KEY (id)) ENGINE=InnoDB DEFAULT CHARSET=latin1`;
 
-//     if(!error) {
-//       console.log("Error in query : "+err);
-//     } else {
-//       console.log("Query Passed Successfully");
-//     }
-//   });
-// });
+// Passing query
+connection.query(createTableQuery, (err) => {
+      if(err) throw err;
+      else {
+        console.log("Table created successfully");
+      }
+    });
+
+// Display Query
+connection.query( "SELECT * FROM crudtest", (err,rows) => {
+  if(err) throw err;
+  else {
+    console.log(rows);
+  }
+});
 
 app.listen(1337);
 
